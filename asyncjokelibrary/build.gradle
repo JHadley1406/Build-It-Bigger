@@ -14,11 +14,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }/*
+    }
+    sourceSets{
+        test.setRoot('src/androidTest')
+    }
+
+
     testOptions{
         unitTests.returnDefaultValues = true
-    }*/
+    }
 }
+
+
+/*
+configurations {
+    integrationTestCompile.extendsFrom testCompile
+}*/
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,3 +39,4 @@ dependencies {
     compile project(path: ':jokesBackend', configuration: 'android-endpoints')
     compile 'junit:junit:4.12'
 }
+

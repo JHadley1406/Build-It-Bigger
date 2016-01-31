@@ -32,6 +32,9 @@ task startServer(dependsOn: ':jokesBackend:appengineRun'){
             daemon true
         }
     }
+    doLast{
+        println "Server Started"
+    }
 
 }
 
